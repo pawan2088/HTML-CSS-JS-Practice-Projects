@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">Start</button>
+    <button id="btn2">Stop</button>
+    <script>
+        let iid;
+        const id1=document.querySelector("#btn1")
+        const id2=document.querySelector("#btn2")
+        const hexGenerate=()=>{
+            const hex="0123456789ABCDEF"
+            let newHex="#"
+            for(let i=0;i<6;i++){
+                newHex+=hex[Math.floor(Math.random()*16)]
+                
+            }
+            return newHex
+        }
+        function changeBack(){
+            document.body.style.backgroundColor=hexGenerate()
+        }
+        const callme=function(){
+            iid=setInterval(changeBack,1)
+        }
+        id1.addEventListener("click",()=>{
+            callme()
+        })
+
+        id2.addEventListener("click",()=>{
+            clearInterval(iid)
+        })
+    </script>
+</body>
+</html>

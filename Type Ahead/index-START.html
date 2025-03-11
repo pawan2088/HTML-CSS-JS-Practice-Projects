@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" id="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const cityList = [];
+const search = document.querySelector("#search");
+const suggestions = document.querySelector(".suggestions");
+
+
+async function fetchData() {
+  const response = await fetch(endpoint);
+  const data = await response.json();
+  cityList.push(...data); 
+}
+fetchData();
+
+
+search.addEventListener("input", () => {
+  let val = search.value.trim();
+  if (val === "") {
+    suggestions.innerHTML = "<li>Filter for a city</li><li>or a state</li>";
+    return;
+  }
+  matchData(val);
+});
+
+
+function matchData(val) {
+  const regex = new RegExp(val, 'gi');
+  const filteredList = cityList.filter(city => city.city.match(regex) || city.state.match(regex));
+  insertToPage(filteredList);
+}
+ 
+
+function insertToPage(itemsArray) {
+  suggestions.innerHTML = ""; 
+  if (itemsArray.length === 0) {
+    suggestions.innerHTML = "<li>No match found</li>";
+    return;
+  }
+
+  itemsArray.forEach(element => {
+    let ele = document.createElement("li");
+    ele.innerHTML = `<strong>${element.city}, ${element.state}</strong> - Population: ${element.population}`;
+    suggestions.appendChild(ele);
+  });
+}
+</script>
+
+</body>
+</html>
