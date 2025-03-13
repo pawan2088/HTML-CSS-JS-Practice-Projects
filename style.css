@@ -25,7 +25,6 @@ body{
     justify-content: center;
     
 }
-
 .container::before {
     content: '';
     position: absolute;
@@ -33,8 +32,8 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("/images/mount-mont-blanc-covered-snow-reflecting-water-evening-chamonix-france.jpg") no-repeat center center / cover;
-    filter: blur(3px);
+
+    filter: blur(5px);
     z-index: -1; 
 }
 
