@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans+Narrow&display=swap');
+*{  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-weight: lighter;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.358);
+    font-weight: 300;
+    
+}
+img{
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.473));
+}
+
+body{
+    overflow: hidden;
+}
+.container{
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/images/mount-mont-blanc-covered-snow-reflecting-water-evening-chamonix-france.jpg") no-repeat center center / cover;
+    filter: blur(3px);
+    z-index: -1; 
+}
+
+.sub-grid1{
+    height: 50vh;
+    width: 90%;
+    /* background-color: green; */
+    margin-top: 2%;
+    display: flex;
+    
+
+}
+
+.sub-sub-grid{
+    /* border: 2px solid black;
+    background-color: blue; */
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.sub-grid2{
+    height: 50vh;
+    width: 90%;
+    /* background-color: yellow; */
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+
+
+.temperature{
+    /* border: 2px solid black;
+    background-color: teal; */
+    height: 100%;
+    width: 50%;
+   
+    font-size: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+.temperature span{
+    font-size: 6rem;
+    margin-bottom: 70px;
+}
+
+.city-date{
+    /* background-color: burlywood; */
+    height: 40%;
+}
+
+
+.weather-svg{
+    /* background-color: chocolate; */
+    height: 60%;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+  
+    
+    
+}
+.weather-svg div img{
+    height: 12rem;
+    margin-left: -15px;
+    margin-left: 10%;
+    
+}
+
+.options{
+    width: 100%;
+    height: 10%;
+    /* background-color: orange; */
+    display: flex;
+    gap: 10%;
+    position: relative;
+    margin-left: 10%;
+}
+
+.options a {
+    width: max-content;
+    position: relative;
+    padding-top: 3px;
+    text-decoration: none;
+}
+
+.options a::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 2px;
+    width: 0;
+    bottom: 2px;
+    transition: width 100ms ease;
+}
+
+.options a:hover::before {
+    width: 100%;
+    border-radius: 5px; 
+}
+.a1{
+    margin-left: 20%;
+}
+
+
+
+
+.divider-line{
+    background-color: rgba(255, 255, 255, 0.477);
+    height: 2px;
+    width: 90%;
+    border-radius: 2px;
+}
+
+.box-container{
+    display: flex;
+    width: 100%;
+    height: 90%;
+    /* background-color: brown; */
+
+}
+
+.box{
+    height: 100%;
+
+    /* background-color: crimson;
+    border: 1px solid black; */
+    flex-grow: 1;
+}
+
+.city{
+    font-size: 3rem;
+    padding-left: 10%;
+    
+}
+.date{
+    font-size: 1.5rem;
+    padding-left: 10%;
+   
+}
+
+
+.box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+.box  img{
+    height: 40%;
+}
+
+#preloader{
+    height: 100vh;
+    width: 100%;
+    background:black url("images/4f432d9234988a5f33b26e0ba06bc6fe.gif") no-repeat center center;
+    display: flex;
+    align-items:first baseline;
+    padding-top: 10%;
+    justify-content: center;
+    
+}
