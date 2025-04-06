@@ -33,6 +33,8 @@ const  apiCall = async function (lati, longi) {
 };
 
 function rawData(){
+    console.log(weatherData);
+    
     const currentTemperature=Math.ceil(weatherData.current.temperature_2m)
     const precipitation=weatherData.current.precipitation
     const is_day=weatherData.current.is_day
