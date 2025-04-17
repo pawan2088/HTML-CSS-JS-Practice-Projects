@@ -1,7 +1,6 @@
 🚀 HTML-CSS-JS Practice Projects
 
 A collection of hands-on web development projects built with HTML, CSS, and JavaScript to enhance front-end development skills.
-
 Show Image
 Show Image
 Show Image
